@@ -1,0 +1,49 @@
+/* src/NutritionInfo.css */
+
+.nutrition-form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #801d4b;
+    border-radius: 5px;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), /* Gradient overlay for text visibility */
+                url(../../assets/NSearchBG.png); /* Path to your background image */
+    background-size: cover; /* Cover the entire element */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent repeating the image */
+    color: white; /* Text color for contrast */
+}
+
+.search-input {
+    width: calc(100% - 22px); /* Full width minus padding and border */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.search-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #ffffff; /* Green background */
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.search-button:hover {
+    background-color: #64144e82;
+
+}
+
+.error-message {
+    color: red;
+    font-weight: bold;
+}
+
+.nutrition-results {
+    margin-top: 20px;
+}

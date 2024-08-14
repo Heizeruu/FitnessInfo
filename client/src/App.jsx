@@ -1,16 +1,17 @@
 // src/App.js
-import React from 'react';
-import NutritionInfo from './NutritionInfo.jsx'
-import Navbar from './Navbar';
+import React from 'react'
+import Navbar from './Components/Navbar/Navbar.jsx'
+import NutritionInfo from './Components/Nutrition/NutritionInfo.jsx';
+
 
 
 const App = () => {
     return (
-        <div className='container'>
+        <div>
             <Navbar/>
-            <NutritionInfo />
+            <NutritionInfo/>
         </div>
     );
 };
 
-export default App;
+export default App
