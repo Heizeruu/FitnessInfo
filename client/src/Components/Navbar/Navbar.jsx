@@ -8,7 +8,7 @@ const Navbar = () => {
     <nav className='container'>
         <img src={logo} alt="" className='logo' />
         <ul>
-        <li><button className='btn'>Home</button></li>
+        <li><button className='btn'>About</button></li>
         <li><button className='btn'>Contact</button></li>
         </ul>
     </nav>

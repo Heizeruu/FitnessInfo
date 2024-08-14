@@ -7,7 +7,9 @@ const NutritionInfo = () => {
     const [food, setFood] = useState('');
     const [nutrition, setNutrition] = useState(null);
     const [error, setError] = useState('');
+    const [adding, setAdding] = useState(false); // Track if adding to DB
 
+    // Fetch nutrition information from the API
     const fetchNutrition = async (event) => {
         event.preventDefault(); // Prevent form submission
 
@@ -28,6 +30,32 @@ const NutritionInfo = () => {
         } catch (err) {
             console.error('Error fetching nutrition info:', err.response ? err.response.data : err.message);
             setError('Failed to fetch nutrition information.');
+        }
+    };
+
+    // Add fetched nutrition info to the database
+    const addToDatabase = async () => {
+        setAdding(true);
+
+        try {
+            // Ensure this URL matches your backend server's URL and port
+            const response = await axios.post('http://localhost:3000/api/nutrition/add', {
+                food,
+                calories: nutrition.foods[0].nf_calories,
+                protein: nutrition.foods[0].nf_protein,
+                fat: nutrition.foods[0].nf_total_fat,
+                carbohydrates: nutrition.foods[0].nf_total_carbohydrate
+            });
+
+            console.log('Server response:', response.data); // Log server response for debugging
+
+            setFood('');
+            setNutrition(null);
+            setAdding(false);
+            alert('Nutrition information saved to database!');
+        } catch (err) {
+            console.error('Error saving to database:', err.response ? err.response.data : err.message);
+            setAdding(false);
         }
     };
 
@@ -52,6 +80,9 @@ const NutritionInfo = () => {
                     <p>Protein: {nutrition.foods[0].nf_protein}g</p>
                     <p>Fat: {nutrition.foods[0].nf_total_fat}g</p>
                     <p>Carbohydrates: {nutrition.foods[0].nf_total_carbohydrate}g</p>
+                    <button onClick={addToDatabase} disabled={adding} className="add-button">
+                        {adding ? 'Saving...' : 'Add to Database'}
+                    </button>
                 </div>
             )}
         </form>

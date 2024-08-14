@@ -3,7 +3,7 @@ nav{
     background: #0000008e;
     color: #000000;
     font-weight: bold;
-    padding: 4px 0;
+    padding: 3px 0;
     position: center;
     top: 0;
     left: 0;
@@ -14,7 +14,7 @@ nav{
 }
 
 .logo{
-    width: 100px;
+    width: 80px;
 }
 
 nav ul li{
