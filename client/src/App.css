@@ -1,15 +1,5 @@
-/* src/Components/Hero/Hero.css */
-
-.hero-container {
-    height: 400px; /* Adjust the height as needed */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white; /* Text color */
-    background: linear-gradient(135deg, #b89f98, #feb47b); /* Gradient background */
-    padding: 20px;
-    text-align: center;
-    border-radius: 10px; /* Optional: for rounded corners */
-    margin: 20px; /* Optional: margin around the hero section */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }

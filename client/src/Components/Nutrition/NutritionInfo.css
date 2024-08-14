@@ -1,21 +1,23 @@
 /* src/NutritionInfo.css */
 
 .nutrition-form {
-    max-width: 500px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #801d4b;
-    border-radius: 5px;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), /* Gradient overlay for text visibility */
-                url(../../assets/NSearchBG.png); /* Path to your background image */
-    background-size: cover; /* Cover the entire element */
-    background-position: center; /* Center the image */
-    background-repeat: no-repeat; /* Prevent repeating the image */
-    color: white; /* Text color for contrast */
+    max-width: 700px;
+    padding: 30px;
+    border: 12x solid #796970;
+    border-radius: 15px;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                url(../../assets/NSearchBG.png); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    color: white; 
+    position: absolute;
+    margin-left: 500px;
+    margin-top: 150px;
 }
 
 .search-input {
-    width: calc(100% - 22px); /* Full width minus padding and border */
+    width: calc(100% - 22px); 
     padding: 10px;
     margin-bottom: 15px;
     border: 1px solid #ccc;
@@ -26,7 +28,7 @@
 .search-button {
     width: 100%;
     padding: 10px;
-    background-color: #ffffff; /* Green background */
+    background-color: #ffffff; 
     color: rgb(0, 0, 0);
     border: none;
     border-radius: 4px;
@@ -35,13 +37,15 @@
 }
 
 .search-button:hover {
-    background-color: #64144e82;
+    background-color: #00000082;
+    color: #ccc;
 
 }
 
 .error-message {
-    color: red;
+    color: rgba(184, 19, 19, 0.751);
     font-weight: bold;
+    font-size: 20px;
 }
 
 .nutrition-results {

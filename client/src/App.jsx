@@ -1,17 +1,27 @@
-// src/App.js
 import React from 'react'
-import Navbar from './Components/Navbar/Navbar.jsx'
-import NutritionInfo from './Components/Nutrition/NutritionInfo.jsx';
+import './App.css'
+import Home from './Components/Hero/Home'
+import Navbar from './Components/Navbar/Navbar'
+import NutritionInfo from './Components/Nutrition/NutritionInfo'
+
+
+
+
+
+
+
+
 
 
 
 const App = () => {
-    return (
-        <div>
-            <Navbar/>
-            <NutritionInfo/>
-        </div>
-    );
-};
+  return (
+    <>
+    <Navbar/>
+    <Home/>
+    <NutritionInfo/>
+    </>
+  )
+}
 
 export default App
