@@ -1,0 +1,35 @@
+.water-intake {
+  margin: 20px;
+  padding: 20px;
+  background-color: #ffffff; 
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.water-intake h2 {
+  color: #6a1b9a; 
+}
+
+.glasses-count {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333; 
+  margin: 10px 0;
+}
+
+.water-intake button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #6a1b9a; 
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.water-intake button:hover {
+  background-color: #9c27b0; 
+}

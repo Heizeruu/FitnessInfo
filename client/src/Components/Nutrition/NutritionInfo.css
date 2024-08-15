@@ -3,7 +3,7 @@
 .nutrition-form {
     max-width: 700px;
     padding: 30px;
-    border: 12x solid #796970;
+    border: 12px solid #796970;
     border-radius: 15px;
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
                 url(../../assets/NSearchBG.png); 
@@ -11,9 +11,9 @@
     background-position: center; 
     background-repeat: no-repeat; 
     color: white; 
-    position: absolute;
-    margin-left: 500px;
-    margin-top: 150px;
+    position: relative;
+    margin: 150px auto;
+
 }
 
 .search-input {
