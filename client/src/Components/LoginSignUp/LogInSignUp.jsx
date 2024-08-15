@@ -1,51 +1,105 @@
 import React, { useState } from 'react';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom'; // Moved this to the top
 import './LoginSignUp.css';
-import user_icon from '../../assets/person.png';
-import email_icon from '../../assets/email.png';
-import password_icon from '../../assets/password.png';
 
 const LoginSignUp = () => {
-  const [isSignUp, setIsSignUp] = useState(true);
+  const [isLogin, setIsLogin] = useState(true);
+  const [formData, setFormData] = useState({
+    username: '',
+    email: '',
+    password: '',
+    passwordConfirmation: ''
+  });
+  const [message, setMessage] = useState('');
+  const navigate = useNavigate(); // Use hook here, outside of any other functions
 
-  const toggleSignUp = () => {
-    setIsSignUp(!isSignUp);
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      if (isLogin) {
+        const response = await axios.post('/api/login', {
+          email: formData.email,
+          password: formData.password
+        });
+        setMessage(response.data.msg);
+      } else {
+        const response = await axios.post('/api/register', {
+          username: formData.username,
+          email: formData.email,
+          password: formData.password,
+          passwordConfirmation: formData.passwordConfirmation
+        });
+        setMessage(response.data.msg);
+        
+        // Redirect to verification page after successful registration
+        if (response.data.success) {
+          navigate('/verification');
+        }
+      }
+    } catch (error) {
+      setMessage(error.response?.data?.error || 'Something went wrong!');
+    }
   };
 
   return (
-    <div className='container'>
-      <div className="header">
-        <div className="text">{isSignUp ? 'Sign Up' : 'Login'}</div>
-        <div className="underline"></div>
-      </div>
-      <div className="inputs">
-        <div className="input">
-          <img src={user_icon} alt="User Icon" />
-          <input type="text" placeholder="Username" />
-        </div>
-        <div className="input">
-          <img src={email_icon} alt="Email Icon" />
-          <input type="email" placeholder="Email" />
-        </div>
-        <div className="input">
-          <img src={password_icon} alt="Password Icon" />
-          <input type="password" placeholder="Password" />
-        </div>
-        {!isSignUp && (
-          <div className="input">
-            <input type="checkbox" id="remember-me" />
-            <label htmlFor="remember-me">Remember Me</label>
+    <div className="login-signup">
+      <h2>{isLogin ? 'Login' : 'Sign Up'}</h2>
+      <form onSubmit={handleSubmit}>
+        {!isLogin && (
+          <div>
+            <label>Username:</label>
+            <input
+              type="text"
+              name="username"
+              value={formData.username}
+              onChange={handleChange}
+              required
+            />
           </div>
         )}
-      </div>
-      <div className="forgot-password">
-        Lost Password? <span>Click Here</span>
-      </div>
-      <div className="submit-container">
-        <div className="submit" onClick={toggleSignUp}>
-          {isSignUp ? 'Login' : 'Sign Up'}
+        <div>
+          <label>Email:</label>
+          <input
+            type="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
         </div>
-        <div className="submit">{isSignUp ? 'Sign Up' : 'Login'}</div>
-      </div>
+        <div>
+          <label>Password:</label>
+          <input
+            type="password"
+            name="password"
+            value={formData.password}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        {!isLogin && (
+          <div>
+            <label>Confirm Password:</label>
+            <input
+              type="password"
+              name="passwordConfirmation"
+              value={formData.passwordConfirmation}
+              onChange={handleChange}
+              required
+            />
+          </div>
+        )}
+        <button type="submit">{isLogin ? 'Login' : 'Sign Up'}</button>
+        <button type="button" onClick={() => setIsLogin(!isLogin)}>
+          {isLogin ? 'Switch to Sign Up' : 'Switch to Login'}
+        </button>
+      </form>
+      {message && <p>{message}</p>}
     </div>
   );
 };

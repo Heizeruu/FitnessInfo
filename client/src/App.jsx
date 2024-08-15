@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './Components/Navbar/Navbar';
@@ -7,6 +8,8 @@ import WaterIntake from './Components/FtrWaterIntakeTracker/WaterIntakeTracker';
 import BMICalculator from './Components/FtrBMICalculator/BMICalculator';
 import SleepTracker from './Components/FtrSleepTracker/SleepTracker';
 import LoginSignUp from './Components/LoginSignUp/LoginSignUp';
+import Home from './Components/Hero/Home';
+
 
 const App = () => {
   return (
@@ -21,6 +24,7 @@ const App = () => {
           <Route path="/sleep-tracker" element={<SleepTracker />} />
           <Route path="/login-signup" element={<LoginSignUp />} />
         </Routes>
+
       </div>
     </Router>
   );

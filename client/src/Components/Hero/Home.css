@@ -1,9 +1,10 @@
-.home{
+.Home{
     width: 100%;
     min-height: 100vh;
-    background: url(../../assets/Homebg.jpg);
+    background: url(../../assets/MainBG.png);
     background-position: center;
-    background-size: cover;
-    filter: blur(2px);
-    position: absolute;
+    background-size: auto;
+    filter: blur(1px);
+
+    
 }

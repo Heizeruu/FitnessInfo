@@ -1,23 +1,23 @@
 /* src/NutritionInfo.css */
 
 .nutrition-form {
-    max-width: 700px;
-    padding: 30px;
-    border: 12px solid #796970;
-    border-radius: 15px;
+    max-width: 300px;
+    padding: 60px;
+    border: 12px solid #121212;
+    border-radius: 1px;
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-                url(../../assets/NSearchBG.png); 
+                url(../../assets/login.jpg); 
     background-size: cover; 
     background-position: center; 
     background-repeat: no-repeat; 
     color: white; 
     position: relative;
-    margin: 150px auto;
-
+    margin: 90px 0 80px 40px; /* Adjust the last value to move it left */
 }
 
+
 .search-input {
-    width: calc(100% - 22px); 
+    width: calc(100% - 44px); 
     padding: 10px;
     margin-bottom: 15px;
     border: 1px solid #ccc;
@@ -26,7 +26,7 @@
 }
 
 .search-button {
-    width: 100%;
+    width: calc(100% - 22px);
     padding: 10px;
     background-color: #ffffff; 
     color: rgb(0, 0, 0);
@@ -37,13 +37,13 @@
 }
 
 .search-button:hover {
-    background-color: #00000082;
+    background-color: #5a2049;
     color: #ccc;
 
 }
 
 .error-message {
-    color: rgba(184, 19, 19, 0.751);
+    color: rgb(255, 0, 0);
     font-weight: bold;
     font-size: 20px;
 }

@@ -1,75 +1,74 @@
-.container {
+.login-signup {
   max-width: 400px;
-  margin: 0 auto;
-  padding: 20px;
-  background: #f5f5f5; 
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 50px;
+  border: 10px solid #121212;
+  border-radius: 4px;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+              url(../../assets/login.jpg); 
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat; 
+  color: white; 
+  position: relative;
+  margin: 150px auto;
 }
 
-.header .text {
-  font-size: 24px;
-  font-weight: bold;
+.login-signup h2 {
+  font-size: 28px;
+  font-weight: 600;
   color: #6a1b9a; 
   text-align: center;
+  margin-bottom: 20px;
 }
 
-.header .underline {
-  width: 50px;
-  height: 4px;
-  background: #6a1b9a; 
-  margin: 10px auto;
-}
-
-.inputs {
+.login-signup form {
   margin-top: 20px;
 }
 
-.input {
-  display: flex;
-  align-items: center;
-  margin-bottom: 15px;
-}
-
-.input img {
-  width: 24px;
-  height: 24px;
-  margin-right: 10px;
-}
-
-.input input {
-  flex: 1;
-  padding: 10px;
-  font-size: 14px;
+.login-signup input[type="text"],
+.login-signup input[type="email"],
+.login-signup input[type="password"] {
+  width: 100%;
+  padding: 12px 0px;
+  margin-bottom: 20px;
   border: 1px solid #dcdcdc;
-  border-radius: 4px;
+  border-radius: 6px;
+  font-size: 15px;
+  background-color: #f5f5f5; 
 }
 
-.forgot-password {
-  font-size: 14px;
-  color: #6a1b9a; 
-  text-align: right;
-  margin-top: 10px;
-  cursor: pointer;
-}
-
-.submit-container {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 20px;
-}
-
-.submit {
+.login-signup button[type="submit"],
+.login-signup button[type="button"] {
   background: #6a1b9a; 
   color: white;
-  padding: 10px 20px;
-  border-radius: 4px;
+  padding: 12px 50px;
+  border: none;
+  border-radius: 6px;
   cursor: pointer;
-  text-align: center;
-  flex: 1;
-  margin-right: 10px;
+  width: 101%;
+  margin-top: 15px;
+  font-size: 16px;
 }
 
-.submit:last-child {
-  margin-right: 0;
+.login-signup button[type="button"] {
+  background: #4b0082; 
+}
+
+.login-signup button[type="submit"]:hover,
+.login-signup button[type="button"]:hover {
+  background-color: #5e2e8d; 
+}
+
+.login-signup p {
+  font-size: 15px;
+  color: #6a1b9a; 
+  text-align: center;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.error-message {
+  color: red;
+  text-align: center;
+  margin-top: 15px;
 }
