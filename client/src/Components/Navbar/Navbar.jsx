@@ -2,7 +2,6 @@ import React from 'react'
 import './Navbar.css'
 import logo from '../../assets/FF.png'
 
-
 const Navbar = () => {
   return (
     <nav className='container'>
